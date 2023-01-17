@@ -48,3 +48,5 @@ ALTER TABLE clientes MODIFY apellido varchar(35) not null;
 ALTER TABLE clientes RENAME COLUMN comentarios to Observaciones;
 ALTER TABLE clientes MODIFY Observaciones varchar(255);
 
+
+
