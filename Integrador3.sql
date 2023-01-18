@@ -54,6 +54,19 @@ date_add(FechaPedido, INTERVAL 60 day) as 'Segundo vencimiento'
 from pedidos_neptuno;
 
 -- Etapa 3.4
+-- 1
+select *, round(Cargo*0.21,2) as IVA  from pedidos_neptuno;
+-- 2
+select *, round(Cargo*0.21,2) as IVA, round(Cargo + Cargo*0.21,2) as NETO  from pedidos_neptuno;
+-- 3
+select *, round(Cargo*0.21,2) as IVA, round(Cargo + Cargo*0.21,2) as NETO, floor(Cargo + Cargo*0.21) as 'Redondeo cliente' from pedidos_neptuno;
+-- 4
+select *, round(Cargo*0.21,2) as IVA, round(Cargo + Cargo*0.21,2) as NETO, floor(Cargo + Cargo*0.21) as 'Redondeo cliente', ceil(Cargo + Cargo*0.21) as 'Redondeo empresa' from pedidos_neptuno;
+
+-- Etapa 3.5
+
+
+
 
 
 
