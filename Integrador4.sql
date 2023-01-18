@@ -81,7 +81,20 @@ where Suspendido = 'SI';
 
 select * from productos_suspendidos;
 
--- 4.2 
+-- 4.3
 
+update productos_neptuno
+set suspendido = 'SI' where idProveedor = 1;
+
+select * from productos_neptuno;
+
+insert into productos_suspendidos
+(select * from productos_neptuno where Suspendido = 'SI' and 
+IdProducto not in(select idProducto from productos_suspendidos));
+
+
+select * from productos_suspendidos;
+
+delete from productos_neptuno where Suspendido = 'SI';
 
 
